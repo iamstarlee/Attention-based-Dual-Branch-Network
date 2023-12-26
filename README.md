@@ -9,3 +9,13 @@ python main.py --use_lmt
 ```python
 python main.py
 ```
+
+# Inference
+```python
+python inference.py
+```
+
+# Evaluation
+```python
+python calculate_results.py
+```
