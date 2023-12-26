@@ -78,8 +78,6 @@ if __name__ == '__main__':
     metrics_logger = logger.Logger(args)
     loss_logger = logger.LossLogger(args.model_name)
     
-    # criterion =  F.binary_cross_entropy_with_logits(pos_weight = class_weights.cuda())
-    # criterion = nn.BCEWithLogitsLoss(pos_weight = class_weights.cuda(), reduction='none')
     criterion = nn.BCEWithLogitsLoss(reduction='none')
 
     for epoch in range(1,args.epochs+1):
