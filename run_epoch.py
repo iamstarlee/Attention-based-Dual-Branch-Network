@@ -30,9 +30,9 @@ def run_epoch(args,model,data,optimizer,epoch,desc,train=False,warmup_scheduler=
         if batch_idx == max_samples:
             break
         
-        labels = batch['labels'].float() # torch.Size([batch_size, 17])
-        images = batch['image'].float() # torch.Size([batch_size, 3, 576, 576])
-        mask = batch['mask'].float() # torch.Size([batch_size, 17])
+        labels = batch['labels'].float() 
+        images = batch['image'].float() 
+        mask = batch['mask'].float() 
         
         unk_mask = custom_replace(mask,1,0,0)
         '''
