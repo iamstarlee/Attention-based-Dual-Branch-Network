@@ -10,7 +10,6 @@ from .graph_layers import GraphConvolution
 from .position_enc import PositionEmbeddingSine,positionalencoding2d
 from collections import OrderedDict
 torch.set_printoptions(threshold=np.inf)
-from .resnet_model import resnet101
 import gensim.models
 
 
@@ -21,7 +20,7 @@ class CTranModel(nn.Module):
         
         self.no_x_features = no_x_features # (for no image features)
 
-        self.backbone = resnet101(pretrained=True)
+        self.backbone = Backbone()
         model = gensim.models.Word2Vec(corpus_file='./TrainEmbeddings.txt', vector_size=2048, window=2, min_count=1)
 
         hidden = 2048 # this should match the backbone output feature size
