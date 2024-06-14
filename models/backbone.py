@@ -13,11 +13,14 @@ from torchvision.models import ResNet101_Weights
 class Backbone(nn.Module):
     def __init__(self):
         super(Backbone, self).__init__()
-        embedding_dim = 2048
+        
         self.freeze_base = False
         self.freeze_base4 = False
 
-        self.base_network = models.resnet101(weights=ResNet101_Weights.IMAGENET1K_V1)
+        self.base_network = models.resnet101() # weights=ResNet101_Weights.IMAGENET1K_V1
+        params = torch.load('pretrained_models/model_deleted_change.pth')
+        self.base_network.load_state_dict(params)
+
         # self.base_network = models.resnet101(pretrained=True)
         self.base_network.avgpool = nn.AvgPool2d(kernel_size=7,stride=1,padding=0) # replace avg pool
         # self.base_network.avgpool = nn.AvgPool2d(2,stride=2) # replace avg pool
