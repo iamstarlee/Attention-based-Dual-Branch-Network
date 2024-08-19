@@ -31,7 +31,7 @@ if __name__ == '__main__':
     if torch.cuda.device_count() > 1:
         print("Let's use ", torch.cuda.device_count(), "GPUs!")
         
-        model = nn.parallel.DataParallel(model.cuda(), device_ids=[0,1])
+        model = nn.parallel.DataParallel(model.cuda(), device_ids=[0,1,2,3])
         '''
         将之前单卡运行时的所有.cuda()替换为.to(device)，会遇到问题，因为
         a = torch.nn.Parameter(torch.zeros(dims, 1).type(torch.FloatTensor), requires_grad=True)

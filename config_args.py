@@ -16,7 +16,7 @@ def get_args(parser,eval=False):
     # Optimization
     parser.add_argument('--optim', type=str, choices=['adam', 'sgd'], default='sgd')
     parser.add_argument('--lr', type=float, default=0.0002) # 0.0001 or 0.0002 
-    parser.add_argument('--batch_size', type=int, default=32)
+    parser.add_argument('--batch_size', type=int, default=512)
     parser.add_argument('--test_batch_size', type=int, default=512)
     parser.add_argument('--grad_ac_steps', type=int, default=1)
     parser.add_argument('--scheduler_step', type=int, default=10)
