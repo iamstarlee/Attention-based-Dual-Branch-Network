@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import argparse,math,numpy as np
 from load_data import get_data
-from models import CTranModel
+from models.CTran import CTranModel
 from config_args import get_args
 import utils.evaluate as evaluate
 import utils.logger as logger

@@ -6,7 +6,7 @@ from os import listdir
 import argparse
 
 def get_args(parser,eval=False):
-    parser.add_argument('--dataroot', type=str, default='./Datasets')
+    parser.add_argument('--dataroot', type=str, default='/mnt/2t')
     parser.add_argument('--dataset', type=str, choices=['coco', 'voc','coco1000','nus','vg','news','cub', 'sewer_ml'], default='sewer_ml')
     parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--results_dir', type=str, default='results/')

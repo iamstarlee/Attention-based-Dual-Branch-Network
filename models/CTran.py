@@ -10,8 +10,6 @@ from .graph_layers import GraphConvolution
 from .position_enc import PositionEmbeddingSine,positionalencoding2d
 from collections import OrderedDict
 torch.set_printoptions(threshold=np.inf)
-from .resnet_model import resnet101
-import gensim.models
 
 
 class CTranModel(nn.Module):
