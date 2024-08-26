@@ -52,7 +52,7 @@ class MultiLabelDataset(Dataset):
     def __getitem__(self, index):
         path = self.imgPaths[index]
     
-        img = self.loader(os.path.join(self.img_dir, self.split, path)) # type: ignore 
+        img = self.loader(os.path.join(self.img_dir, self.split, path)) 
 
         if self.image_transform is not None:
             img = self.image_transform(img)
@@ -130,7 +130,7 @@ class MultiLabelDatasetInference(Dataset):
     def __getitem__(self, index):
         path = self.imgPaths[index]
 
-        img = self.loader(os.path.join(self.imgRoot, self.split, path)) # type: ignore # This is the original big dataset!
+        img = self.loader(os.path.join(self.imgRoot, self.split, path))
         
         if self.transform is not None:
             img = self.transform(img)
