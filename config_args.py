@@ -8,7 +8,7 @@ import argparse
 def get_args(parser,eval=False):
     parser.add_argument('--dataroot', type=str, default='/mnt/2t')
     parser.add_argument('--dataset', type=str, choices=['coco', 'voc','coco1000','nus','vg','news','cub', 'sewer_ml'], default='sewer_ml')
-    parser.add_argument('--workers', type=int, default=2)
+    parser.add_argument('--workers', type=int, default=8)
     parser.add_argument('--results_dir', type=str, default='results/')
     parser.add_argument('--test_known', type=int, default=0)
     parser.add_argument("--local_rank", type=int, default=0, help="number of cpu threads to use during batch generation")
